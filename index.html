@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Templates</title>
+    <meta name="description" content="Assignment 8" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/CrudApp.css">
+  </head>
+  <body>
+    <h1>Templates</h1>
+    <div id="error-message"></div>
+    <!-- TABLE START -->
+    <button type="button" id='ptable-button'>Table from Template</button>
+    <br /><br />
+    <div id="main"></div>
+    <!-- TABLE END   -->
+    <br/>
+    <div id="form-page">
+      <button type="button" id="new-person">Add New Person</button>
+      <br/><br/>
+      <form>
+        <label for="name">Name</label>
+        <input type="text" id="name" />
+        <br /><br />
+        <label for="age">Age</label>
+        <input type="number" id="age" />
+        <br /><br />
+        <button type="submit" id="submit">Submit</button>
+        <button type="button" id="cancel">Cancel</button>
+      </form>
+    </div>
+    <!-- JavaScript -->
+    <script id="tableTemplate" type="text/x-handlebars-template">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Actions!</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each persons}}
+            <tr>
+              <td>{{name}}</td>
+              <td>{{age}}</td>
+              <td>{{actions}}</td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </script>    
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="  crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
+    <script src="js/RestApiDataMgr.js"></script>
+    <script src="js/RestDBApp.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
